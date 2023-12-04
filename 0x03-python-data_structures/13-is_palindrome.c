@@ -23,7 +23,7 @@ int is_palindrome(listint_t **head)
 	}
       prt->next = NULL;
       half = trt;
-      it1 = reverse_listint(&half);
+      T1 = reverse_listint(&half);
       for (T2 = *head; T2; T1 = T1->next, T2 = T2->next)
 	{
 	  if (T2->n != T1->n)
@@ -51,23 +51,23 @@ int is_palindrome(listint_t **head)
 
 listint_t *reverse_listint(listint_t **head)
 {
-  listint_t *nxt = NULL, *prv = NULL;
+  listint_t *next = NULL, *prev = NULL;
 
   if (!head || !*head)
     return (NULL);
 
-  while ((*head)->nxt)
+  while ((*head)->next)
     {
-      nxt = (*head)->nxt;
+      next = (*head)->next;
 
-      (*head)->nxt = prv;
+      (*head)->next = prev;
 
-      prv = *head;
+      prev = *head;
 
-      *head = nxt;
+      *head = next;
     }
 
-  (*head)->nxt = prv;
+  (*head)->next = prev;
 
   return (*head);
 }
