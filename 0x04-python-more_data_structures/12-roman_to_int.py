@@ -8,3 +8,28 @@ def roman_value(prmCharacter):
         if (prmCharacter is character):
             return value
     return None
+
+
+def next_value(prmString, prmIndex):
+    if prmIndex + 1 < len(prmString):
+        return roman_value(prmString[prmIndex + 1])
+    else:
+        return None
+
+
+def roman_to_int(roman_string):
+    result = 0
+
+    if (roman_string is None or isinstance(roman_string, str) is False):
+        return result
+
+    enum = enumerate(roman_string)
+    for index, character in enum:
+        currentValue = roman_value(character)
+        nextValue = next_value(roman_string, index)
+        if nextValue is None or currentValue >= nextValue:
+            result += currentValue
+        else:
+            result += (nextValue - currentValue)
+            next(enum)
+    return result
