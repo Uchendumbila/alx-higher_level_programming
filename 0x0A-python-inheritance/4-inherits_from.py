@@ -14,17 +14,3 @@ def inherits_from(obj, a_class):
     
     # Check if the specified class is in the set
     return any(issubclass(cls, a_class) for cls in obj_classes)
-
-# Example usage:
-class BaseClass:
-    pass
-
-class SubClass(BaseClass):
-    pass
-
-class AnotherSubClass(SubClass):
-    pass
-
-obj = AnotherSubClass()
-print(inherits_from(obj, BaseClass))  # Output: True
-print(inherits_from(obj, int))        # Output: False
