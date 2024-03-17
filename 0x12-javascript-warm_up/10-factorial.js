@@ -6,7 +6,7 @@ function factorial (x) {
   } else if (x === 1) {
     return 1;
   } else {
-    return (x * factorial(a - 1));
+    return (x * factorial(x - 1));
   }
 }
 
