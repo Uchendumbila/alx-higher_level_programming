@@ -1,13 +1,10 @@
 #!/usr/bin/node
 
-// Checking for Rectangle parameters
+// Defines a Rectangle class with width and height attributes.
 
 module.exports = class Rectangle {
-  constructor (height, width) {
-    if (typeof height === 'number' && typeof width === 'number' && height > 0 && width > 0) {
-	    this.height = height;
-	    this.width = width;
-
-    }
+  constructor (width, height) {
+    this.width = width;
+    this.height = height;
   }
 };
