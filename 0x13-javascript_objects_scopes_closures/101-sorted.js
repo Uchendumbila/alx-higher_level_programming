@@ -9,4 +9,3 @@ Object.keys(dict).map(function (key) {
   }
   newDict[dict[key]].push(key);
 });
-console.log(newDict);
