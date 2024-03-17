@@ -11,4 +11,3 @@ Object.keys(dict).forEach(function (key) {
 });
 
 console.log(newDict);
-
